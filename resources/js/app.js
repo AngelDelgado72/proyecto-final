@@ -1,5 +1,7 @@
 // import './bootstrap';
 import Dropzone from 'dropzone';
+//import 'alpinejs';
+
 
 Dropzone.autoDiscover = false;
 // Configuración del dropzone
