@@ -11,11 +11,11 @@
         <div class="space-y-4">
             <div>
                 <x-jet-label for="email" value="{{ __('Correo electrónico') }}" />
-                <x-jet-input id="email" type="email" name="email" value="2030191@upv.edu.mx" required autofocus />                
+                <x-jet-input id="email" type="email" name="email" required autofocus />                
             </div>
             <div>
                 <x-jet-label for="password" value="{{ __('Contraseña') }}" />
-                <x-jet-input id="password" type="password" name="password" value="password" required autocomplete="current-password" />                
+                <x-jet-input id="password" type="password" name="password" required autocomplete="current-password" />                
             </div>
         </div>
         <div class="flex items-center justify-between mt-6">
