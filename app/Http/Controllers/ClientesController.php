@@ -13,6 +13,7 @@ class ClientesController extends Controller
         $this->middleware('auth');
     }
 
+    //funcion que regresa la vista
     public function index()
     {
         $clientes = Clientes::all();
@@ -20,6 +21,7 @@ class ClientesController extends Controller
     }
 
 
+    //funcion para agregar datos a la base de datos
     public function store(Request $request)
     {
         
@@ -34,6 +36,7 @@ class ClientesController extends Controller
             'nombre_empresa' => 'required',
         ]);
 
+        //mete los datos
         Clientes::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
@@ -49,13 +52,16 @@ class ClientesController extends Controller
     
     }
 
+    //funcion que redirige a la vista de crear clientes
     public function create()
     {
         return view('pages/dashboard/crear-cliente');
     }
 
+    //funcion para eliminar 
     public function delete($id_cliente)
     {
+        //eliminar el cliente
         Clientes::find($id_cliente)->delete();
         return back();
     }

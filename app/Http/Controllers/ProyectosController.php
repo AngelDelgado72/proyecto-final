@@ -14,12 +14,16 @@ class ProyectosController extends Controller
         $this->middleware('auth');
     }
 
+    //funcion que regresa la vista de proyectos
     public function index()
     {
+        //obtener los datos de la base de datos y guardarlos en una variable para despues pasarlos a la vista de proyectos
         $proyectos = Proyectos::all();
         return view('pages/dashboard/proyectos', ['proyectos' => $proyectos]);
     }
 
+
+    //funcion para agregar datos a la base de datos
     public function store(Request $request)
     {
         
@@ -35,6 +39,7 @@ class ProyectosController extends Controller
             'descripcion' => 'required',
         ]);
 
+        //mete los datos en la base de datos 
         Proyectos::create([
             'nombre_proyecto' => $request->nombre_proyecto,
             'cliente' => $request->cliente,
@@ -52,11 +57,13 @@ class ProyectosController extends Controller
     
     }
 
+    //funcion que redirige a la vista de crear proyectos
     public function create()
     {
         return view('pages/dashboard/crear-proyecto');
     }
 
+    //eliminar un proyecto de la base de datos
     public function delete($id_proyecto)
     {
         Proyectos::find($id_proyecto)->delete();

@@ -41,6 +41,7 @@ class ColaboradoresController extends Controller
             'reporta_a' => 'required',
         ]);
 
+        //crear un nuevo colaborador
         Colaboradores::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,

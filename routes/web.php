@@ -31,19 +31,40 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     });    
 
 
+    //Ruta para el CRUD de colaboradores
     Route::get('/colaboradores', [ColaboradoresController::class, 'index'])->name('colaboradores.index');
+    
+    //Ruta para agregar colaboradores
     Route::post('/colaboradores/agregar/', [ColaboradoresController::class, 'store']);
+
+    //Ruta para crear colaboradores
     Route::get('/colaboradores/agregar/', [ColaboradoresController::class, 'create'])->name('colaboradores.create');
+
+    //Ruta para eliminar colaboradores
     Route::get('/colaboradores/eliminar/{id_colaborador}', [ColaboradoresController::class, 'delete'])->name('colaboradores.eliminar');
 
+    //Ruta para editar colaboradores
     Route::get('/proyectos', [ProyectosController::class, 'index'])->name('proyectos.index');
+
+    //Ruta para agregar proyectos
     Route::post('/proyectos/agregar/', [ProyectosController::class, 'store']);
+
+    //Ruta para crear proyectos
     Route::get('/proyectos/agregar/', [ProyectosController::class, 'create'])->name('proyectos.create');
+
+    //Ruta para eliminar proyectos
     Route::get('/proyectos/eliminar/{id_proyecto}', [ProyectosController::class, 'delete'])->name('proyectos.eliminar');
 
+    //Ruta para editar proyectos
     Route::get('/clientes', [ClientesController::class, 'index'])->name('clientes.index');
+
+    //Ruta para agregar clientes
     Route::post('/clientes/agregar/', [ClientesController::class, 'store']);
+
+    //Ruta para crear clientes
     Route::get('/clientes/agregar/', [ClientesController::class, 'create'])->name('clientes.create');
+
+    //Ruta para eliminar clientes
     Route::get('/clientes/eliminar/{id_cliente}', [ClientesController::class, 'delete'])->name('clientes.eliminar');
 
 
